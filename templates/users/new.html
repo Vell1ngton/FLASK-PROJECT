@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+        font-weight:bold;
+        border-bottom: 2px solid #32a1ce
+        }
+
+        label {
+        font-size: 20px
+        }
+    </style>
+</head>
+<body>
+<h1>New User</h1>
+<form action="/users" method="post">
+  <div>
+    <label>
+      Nickname:
+      <input type="text" name="name" value="{{ user.name }}">
+    </label>
+      {% if errors %}
+            <div>{{ errors.Nickname }}</div>
+        {% endif %}
+  </div>
+  <div>
+    <label>
+      Email:
+      <input type="text" required name="email">
+    </label>
+      {% if errors %}
+            <div>{{ errors.email }}</div>
+    {% endif %}
+    </div>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
