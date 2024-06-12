@@ -59,3 +59,6 @@ def delete_school():
         f.write(' ')
     flash('User has been deleted', 'success')
     return redirect(url_for('user'))
+
+if __name__ == '__main__':
+    app.run(debug=False)
